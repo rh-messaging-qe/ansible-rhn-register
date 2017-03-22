@@ -1,0 +1,6 @@
+---
+  - name: Register to RHN using subscription-manager
+    shell: subscription-manager status || subscription-manager register --username {{ rhn_username }} --password {{ rhn_password }} --force --auto-attach
+
+  - name: Disable all RHN repositories
+    shell: subscription-manager repos --disable=*
