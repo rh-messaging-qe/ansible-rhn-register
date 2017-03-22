@@ -13,8 +13,8 @@ Role Variables
 
 | Name              | Default Value       | Description          |
 |-------------------|---------------------|----------------------|
-| `rhn_username` | `qa@redhat.com` | Red Hat Portal username. |
-| `rhn_password` | `changeme` | Red Hat Portal password. |
+| `rhn_username` | NULL | Red Hat Portal username. |
+| `rhn_password` | NULL | Red Hat Portal password. |
 
 Dependencies
 ------------
