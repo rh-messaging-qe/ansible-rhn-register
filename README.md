@@ -30,10 +30,16 @@ Including an example of how to use your role (for instance, with variables passe
       roles:
          - rhn-subscribe: { rhn-subscribe: mysuser@redhat.com, rhn_password: changeme }
 
-License
+
+Testing
 -------
 
-None
+1. Export a test inventory, otherwise it will run on localhost:
+
+`export TEST_INVENTORY=/home/opiske/code/infra/test-inventory-ansible/hosts`
+
+2. Run:
+`make test`
 
 Author Information
 ------------------
