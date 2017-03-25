@@ -1,6 +1,10 @@
 ---
-  - name: Register to RHN using subscription-manager
-    shell: subscription-manager status || subscription-manager register --username {{ rhn_username | default(lookup('env','RHN_USERNAME')) }} --password {{ rhn_password | default(lookup('env','RHN_PASSWORD')) }} --force --auto-attach
+- name: Unsubscribe to RHN using subscription-manager
+  when: rhn_unsubscribe is defined and rhn_unsubscribe == true
+  shell: subscription-manager unsubscribe
 
-  - name: Disable all RHN repositories
-    shell: subscription-manager repos --disable=*
+- name: Register to RHN using subscription-manager
+  shell: subscription-manager status || subscription-manager register --username {{ rhn_username | default(lookup('env','RHN_USERNAME')) }} --password {{ rhn_password | default(lookup('env','RHN_PASSWORD')) }} --force --auto-attach
+
+- name: Disable all RHN repositories
+  shell: subscription-manager repos --disable=*

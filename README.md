@@ -15,6 +15,7 @@ Role Variables
 |-------------------|---------------------|----------------------|
 | `rhn_username` | lookup('env','RHN_USERNAME') | Red Hat Portal username. |
 | `rhn_password` | lookup('env','RHN_PASSWORD') | Red Hat Portal password. |
+| `rhn_unsubscribe` | null | Whether to unsubscribe. |
 
 A username and password may be also set at system level by exporting the variables RHN_USERNAME and RHN_PASSWORD.
 
