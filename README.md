@@ -47,4 +47,4 @@ Testing
 Author Information
 ------------------
 
-messaging-qe@redhat.com
+Messaging QE team @ redhat.com
