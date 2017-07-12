@@ -15,4 +15,4 @@
 - hosts: all
   remote_user: root
   roles:
-    - rhn-register
+    - ansible-rhn-register

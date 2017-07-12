@@ -35,7 +35,7 @@ Including an example of how to use your role (for instance, with variables passe
 
     - hosts: servers
       roles:
-         - rhn-subscribe: { rhn-subscribe: mysuser@redhat.com, rhn_password: changeme }
+         - ansible-rhn-register: { rhn_username: mysuser@redhat.com, rhn_password: changeme }
 
 
 Testing
