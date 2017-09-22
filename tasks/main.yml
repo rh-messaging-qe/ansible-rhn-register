@@ -19,5 +19,7 @@
   shell: subscription-manager unregister
 
 - name: Register to RHN using subscription-manager
-  when: ansible_distribution == 'RedHat'
+  when:
+    - ansible_distribution == 'RedHat'
+    - rhn_skip_registration is defined and rhn_skip_registration == false
   shell: subscription-manager status || subscription-manager register --username {{ rhn_username | default(lookup('env','RHN_USERNAME')) }} --password {{ rhn_password | default(lookup('env','RHN_PASSWORD')) }} {{ rhn_register_server_url_args }} {{ rhn_register_base_url_args }} {{ rhn_register_force_args }} {{ rhn_register_auto_attach_args }}
