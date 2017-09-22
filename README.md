@@ -15,13 +15,22 @@ Role Variables
 |-------------------|---------------------|----------------------|
 | `rhn_username` | lookup('env','RHN_USERNAME') | Red Hat Portal username. |
 | `rhn_password` | lookup('env','RHN_PASSWORD') | Red Hat Portal password. |
-| `rhn_unsubscribe` | null | Whether to unsubscribe. |
+| `rhn_unregister` | null | Whether to unregister. (DEPRECATED)|
 | `rhn_register_server_url` | undefined | RHN server hostname  |
 | `rhn_register_base_url` | undefined | RHN server base URL |
 | `rhn_register_force` | true | Whether to force subscriptioin. |
 | `rhn_register_auto_attach` | null | Whether to auto-attach. |
 
 A username and password may be also set at system level by exporting the variables RHN_USERNAME and RHN_PASSWORD.
+
+**Deprecated variables**
+
+These variables are deprecated and will be removed.
+
+
+| Name              | Default Value       | Description          |
+|-------------------|---------------------|----------------------|
+| `rhn_unsubscribe` | null | Whether to unregister (same as rhn_unregister). |
 
 Dependencies
 ------------

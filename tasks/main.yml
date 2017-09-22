@@ -12,9 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 ---
-- name: Unsubscribe to RHN using subscription-manager
-  when: rhn_unsubscribe is defined and rhn_unsubscribe == true and ansible_distribution == 'RedHat'
-  shell: subscription-manager unsubscribe --all
+- name: Unregister from RHN using subscription-manager
+  when: ansible_distribution == 'RedHat' and ((rhn_unsubscribe is defined and rhn_unsubscribe == true and ) or (rhn_unregister is defined and rhn_unregister == true))
+  shell: subscription-manager unregister
 
 - name: Register to RHN using subscription-manager
   when: ansible_distribution == 'RedHat'
