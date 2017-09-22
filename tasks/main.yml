@@ -15,7 +15,7 @@
 - name: Unregister from RHN using subscription-manager
   when:
     - ansible_distribution == 'RedHat'
-    - (rhn_unsubscribe is defined and rhn_unsubscribe == true and ) or (rhn_unregister is defined and rhn_unregister == true)
+    - (rhn_unsubscribe is defined and rhn_unsubscribe == true) or (rhn_unregister is defined and rhn_unregister == true)
   shell: subscription-manager unregister
 
 - name: Register to RHN using subscription-manager
