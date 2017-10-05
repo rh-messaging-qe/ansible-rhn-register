@@ -21,6 +21,8 @@ Role Variables
 | `rhn_register_base_url` | undefined | RHN server base URL |
 | `rhn_register_force` | true | Whether to force subscriptioin. |
 | `rhn_register_auto_attach` | null | Whether to auto-attach. |
+| `rhn_register_skip_attach` | true | Whether to skip attaching to additional pools. |
+| `rhn_register_pool_id` | null | One or more pool IDs to attach. |
 
 A username and password may be also set at system level by exporting the variables RHN_USERNAME and RHN_PASSWORD.
 

@@ -23,3 +23,11 @@
     - ansible_distribution == 'RedHat'
     - rhn_skip_registration is defined and rhn_skip_registration == false
   shell: subscription-manager status || subscription-manager register --username {{ rhn_username | default(lookup('env','RHN_USERNAME')) }} --password {{ rhn_password | default(lookup('env','RHN_PASSWORD')) }} {{ rhn_register_server_url_args }} {{ rhn_register_base_url_args }} {{ rhn_register_force_args }} {{ rhn_register_auto_attach_args }}
+
+
+- name: Attach current system registration to a pool
+  when:
+    - ansible_distribution == 'RedHat'
+    - rhn_register_skip_attach is defined and rhn_register_skip_attach == false
+    - rhn_register_pool_id is defined
+  shell: subscription-manager attach --pool {{ rhn_register_pool_id | join(" --pool ") }}

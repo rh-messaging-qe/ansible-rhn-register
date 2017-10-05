@@ -24,3 +24,5 @@ rhn_register_force_args:  "{% if rhn_register_force == true %} --force {% else %
 
 rhn_register_auto_attach: true
 rhn_register_auto_attach_args:  "{% if rhn_register_auto_attach == true %} --auto-attach {% else %} '' {% endif %}"
+
+rhn_register_skip_attach: true
