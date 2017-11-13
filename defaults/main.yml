@@ -14,15 +14,15 @@
 ---
 # defaults file for rhn-register
 # rhn_register_server_url:
-rhn_register_server_url_args: "{% if rhn_register_server_url is defined %} --serverurl={{ rhn_register_server_url }} {% else %} '' {% endif %}"
+rhn_register_server_url_args: "{% if rhn_register_server_url is defined %} --serverurl={{ rhn_register_server_url }} {% endif %}"
 
 # rhn_register_base_url:
-rhn_register_base_url_args: "{% if rhn_register_base_url is defined %} --baseurl={{ rhn_register_base_url }} {% else %} '' {% endif %}"
+rhn_register_base_url_args: "{% if rhn_register_base_url is defined %} --baseurl={{ rhn_register_base_url }} {% endif %}"
 
 rhn_register_force: true
-rhn_register_force_args:  "{% if rhn_register_force == true %} --force {% else %} '' {% endif %}"
+rhn_register_force_args:  "{% if rhn_register_force == true %} --force {% endif %}"
 
 rhn_register_auto_attach: true
-rhn_register_auto_attach_args:  "{% if rhn_register_auto_attach == true %} --auto-attach {% else %} '' {% endif %}"
+rhn_register_auto_attach_args:  "{% if rhn_register_auto_attach == true %} --auto-attach {% endif %}"
 
 rhn_register_skip_attach: true
