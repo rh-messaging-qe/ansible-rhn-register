@@ -13,12 +13,18 @@
 # limitations under the License.
 ---
 - name: Unregister from RHN using subscription-manager
+  tags:
+    - rhn
+    - unregister
   when:
     - ansible_distribution == 'RedHat'
     - (rhn_unsubscribe is defined and rhn_unsubscribe == true) or (rhn_unregister is defined and rhn_unregister == true)
   shell: subscription-manager unregister
 
 - name: Register to RHN using subscription-manager
+  tags:
+    - rhn
+    - register
   when:
     - ansible_distribution == 'RedHat'
     - rhn_skip_registration is defined and rhn_skip_registration == false
@@ -26,6 +32,9 @@
 
 
 - name: Attach current system registration to a pool
+  tags:
+    - rhn
+    - attach
   when:
     - ansible_distribution == 'RedHat'
     - rhn_register_skip_attach is defined and rhn_register_skip_attach == false
